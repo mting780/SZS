@@ -1,0 +1,132 @@
+html,body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000;
+}
+
+
+
+#quote, #next, #header, #quote_description, #about {
+	font-family: "Open Sans", sans-serif;
+
+}
+
+h2, h3, h4, a {
+	text-decoration: none;
+	color: #fff;
+	font-family: "Open Sans",sans-serif;
+}
+
+#about {
+	position:absolute;
+	top:30%;
+	left: 20%;
+	width: 60%;
+	color: #fff;
+	font-size: 36px;
+	line-height: 130%;
+	text-align: center;
+
+}
+
+#about_us {
+	position:absolute;
+	top:30%;
+	left: 20%;
+	width: 60%;
+	color: #fff;
+	font-size: 36px;
+	line-height: 130%;
+	text-align: center;
+
+}
+#footer{
+	color:#fff;
+	clear:both;
+	font-family: "Open Sans",sans-serif;
+	vertical-align: middle;
+	position: absolute;
+	top: 95%;
+	text-align: center;
+	left:47%;
+}
+
+
+#next {
+	text-decoration: none;
+	color: #fff;
+	padding: 0px;
+	border: solid 2 #fff;
+}
+
+#quote {
+	color: #fff;
+	display: table-cell;
+	font-size: 36px;
+	border: solid 2px #fff;
+	padding: 50px;
+	left: 25%;
+    line-height: 110%;
+    position: absolute;
+    top: 30%;
+    width: 40%;
+    text-align: center;
+    border-radius: 3px;
+    height: 255px;
+}
+
+#quote_body {
+	position: relative;
+}
+
+
+#next_button {
+	color: #fff;
+	font-size: 26px;
+	border: solid 2px #fff;
+	border-radius: 4px;
+	padding: 0px;
+	left: 45.5%;
+    line-height: 5px;
+    position: absolute;
+    top: 75%;
+    width: 5%;
+    text-align: center;
+}
+#next:hover {
+	color: #D05353;
+	
+}
+
+#nav_bar {
+	font-size: 28px;
+	margin: 30px auto;
+	float: left;
+	margin-left: 20px;
+}
+
+.nav_button:hover {
+	color: #D05353;
+}
+
+#QB_box {
+	padding: 5px;
+	max-width: 800px;
+
+}
+#quote_description {
+	color: #fff;
+	font-size: 18px;
+	background-color: #000;
+	height: 50px;
+	width:30%;
+	display: block;
+	position: absolute;
+	line-height: 115%;
+	left: 36%;
+	top: -18;
+	bottom: 0;
+	z-index: 1;
+}	

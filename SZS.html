@@ -1,0 +1,250 @@
+<html>
+<head>
+</head>
+	<link rel="stylesheet" type="text/css" href="SZS_CSS.css">
+	<script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+	<script src="javascript.js"></script>
+	<title>Sh*t Zuhreea Says </title>
+	<!--Font Awesome -->
+	<script src="https://use.fontawesome.com/d8666144dd.js"></script>
+	<!--Google font library -->
+	<link href=' http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<title>Sh*t Zuhreea Says </title>
+
+<body>
+
+<!--Header-->
+<div id="header">
+	<div id="nav_bar">
+		<a href="#" class="nav_button">home</a>
+		<a href="" class="nav_button" style="padding-left: 30px">who are we</a>
+		<a href="what_is_this.html" style="padding-left: 30px" class="nav_button">what is this</a>
+	</div>
+</div>
+	
+<!--Quote Box -->
+<div>
+	<div id="quote">
+		<span id="quote_description">
+		</span>
+		<div id="quote_body">
+		</div>
+	</div>
+</div>
+
+<!--Quote Randomizer Button -->
+<div>
+	<h4 id="next_button">
+		<p id="next">Next</p>
+	</h4>
+</div>
+
+<!--footer-->
+<div id="footer">v 1.0</div>
+
+<script>
+var refreshBtn = document.getElementById('next_button'),
+    textHolder = document.getElementById('quote_body'),
+    descriptHolder = document.getElementById('quote_description'),
+    quoteArray = ['\"It\'s called Diary of a Wimpy Kid\"\n\"Well yeah, they couldn\'t call it Diary of a punk ass bitch\"',
+    				'Giraldi',
+    				'Don\'t tell your kids they\'re beautiful when they\'re ugly AF\; that\'s just disrespectful.',
+    				'It\'s like Disney world for the intelligent.',
+    				'I\'ll probably go to old people homes just to stand there and look hot',
+    				'Now we\'re talking about paying rent for my rock, and with growing square footage that\'s going to increase so I\'m gonna have to move out\.\.\.then we\'re talking about gentrification on my rock.',
+                    'Don\'t shoot for the stars. Just aim for pizza. Then if you miss, you\'ll land in the cheese.',
+                    'Steph Curry isn\'t on the box [of Wheaties] anymore so I don\'t have any incentive to eat.',
+                    'I like the distress in my jeans to reflect the distress in my life.',
+                    '"I need a really solid replacement for a purse."\n\
+                        "How about a fanny pack?"\n\
+                        "That\'s disgusting. I said solid not ancient."',
+                    'If anything like that tried to crawl on me, I\'d stomp it out then find its family and stomp it out too.',
+                    'I thought they only wanted crackheads for OC counselors.',
+                    'I hit him with the nah fam.',
+                    'I don\'t like this guy\'s face anymore. He looked better on Tinder',
+                    'Taylor Swift? Like her last relationship?',
+                    'Where your wallet will cry...probably set itself on fire just so you can stop torturing it.',
+                    'I feel like he\'s the kind of man who gets bored and then leaves you for a stripper.',
+                    'I used to think he was cute before he was wasting my time.',
+                    'The waterfall was a problem it was disrespectful to humanity as a whole.',
+                    'I remember in middle school the worst thing someone could say to you is you have no friends, but now, I\'m like "I\'m off the hook."',
+                    'I had so many middle fingers to give to her. I was going to grow some just to give her.',
+                    'Why would you get an infinity sign when you could get the quadratic equation.',
+                    'I tried [to get out of it]. Luckily I got lockjaw so I got out. My dentist says it was probably because I tried to correct my smile.',
+                    'You can write unit tests from anywhere...you can cry from any location in this earth.',
+                    'I feel like we should have admittance tests for Christians. Jews don\'t have these problems because they have requirements.',
+                    ' I didn\'t think they served a purpose, thought they were a cultural norm.',
+                    '"She can go fuck herself."\n\
+                        "She probably does"',
+                    "At least your stupidity is limited to 149 characters.",
+                    'Well some art is ugly but I don\'t really support that.',
+                    'I would like to coke more and code less.',
+                    'I always like to keep track of how orange he is.',
+                    'That\'s fine if other people want to stay constipated for the next 30 years.',
+                    '"Tell me something about yourself other guys wouldn\'t know about."\n\
+                    "I\'m a huge fan of cocaine."',
+                    'This is what happens when gentrification happens, you got pigeons running the streets. Who are they going to be afraid of? The engineers?? I think these pigeons haven\'t heard enough gunshots.',
+                    'Everyone looks stupid chasing the air...if you want to look committed chasing oxygen that\'s all on you.',
+                    'White bread? You\'re like eating flour straight out of the bag fam. ',
+                    'I wonder what it\'s like to be a bigoted racist. Must be easier than being black.',
+                    'I don\'t need a logo look at this face.',
+                    'It\'s like putting your hand in the fire, having it catch on fire, extinguishing it, then saying "do it again, it might not catch on fire."',
+                    'My dad bought me some once, I took a bite and I chewed it for 5 minutes and was full by the middle of the slice. You could feed a small country with it...honestly you could just give this to Luxembourg and they\'d be good.',
+                    'Before CMU I thought computer science meant the Geek Squad at Best Buy.',
+                    'I would like to jump off a couple of cliffs...because one was not enough. ',
+                    'The saddest day I ever experienced was when I flushed a MAC lipstick down the toilet by accident.',
+                    'At first I thought he was the walking embodiment of cultural appropriation.',
+                    'I don\'t call this social cue, I call this a cry for help',
+                    'This guy looks like Waka Flocka Flame. Unacceptable.',
+                    'I already got the worst of the worst news....I already got my grades they can\'t do anything to me.',
+                    'I was a bougie MAC store girl until my mom made me buy drugstore makeup. Now I\'m trusting Neutrogena to not fuck up my face and make me look like burnt toast. ',
+                    'Honestly if someone sat on me to win a fight. ..I\'d bring dishonor to my whole family.',
+                    'I would probably light that girl on fire.',
+                    '"What turns you on"\n"Financial stability"',
+                    'I want to wear skinny jeans and look like I exist in this generation.',
+                    'I associate each event with a particular piece of equipment I was struggling on...like when he was telling me about the instagram thing, I was on the elliptical.',
+                    'I basically said I was prepared for college because my mom made me do all this shit all by myself and I was just going to show up and take my classes.',
+                    'That\'s why I don\'t go to places with white people',
+                    'Oh he looks like trouble. I\'ll like that.',
+                    'UC Berkeley? As a history major? I\'ll like it. For the variety.',
+                    'That\'s the difference between an extrovert and an introvert: one keeps trying.',
+                    'This persons really struggling but I\'ll let it slide.',
+                    'They can\'t card him at a bar...because then he\'d just look like his wife left him for a sexy doctor.',
+                    'I was really hoping, if I was lucky, one of you got laid and didn\'t come home last night.',
+                    'I can\'t hate someone if I can dance to their music.',
+                    'Instead of "In God We Trust", it should be "For Shits and Giggles" ',
+                    'For one dollar, you too can save a white child and buy a jar of paprika.',
+                    'Usually if I don\'t feel like interacting my resting bitch face will come out. It even comes out when I do want to talk to people.',
+                    'Someone needs to address that.'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    				],
+
+    descriptionArray=['On literature',
+    				'On the pronunciation of Ghiradelli',
+    				'On parenthood',
+    				'On the Academy of Arts and Sciences',
+    				'On aging gracefully',
+    				'On living under a rock',
+                    '--',
+                    'On cereal boxes and a balanced breakfast',
+                    'On fashion choices pt. 1',
+                    'On fashion choices pt. 2',
+                    'On mosquitoes',
+                    'On Orientation enthusiasm',
+                    'On Tinder',
+                    'On Tinder guys Pt.1',
+                    'On celebrities',
+                    'On the price of living in San Francisco',
+                    'On Tinder guys Pt.2',
+                    'On Tinder guys Pt.3',
+                    'On Huntington Falls',
+                    'On friendship',
+                    'On dealing with anger',
+                    'On generic tattoos',
+                    'On freshmen orientation',
+                    'On working remotely',
+                    'On radical Christians',
+                    'On the importance of wearing socks during exercise',
+                    'The secret life of strangers',
+                    'On Twitter',
+                    'On art and culture',
+                    'On lifestyle choices',
+                    'On following Donald Trump on media',
+                    'On eating fiber-rich cereal',
+                    'On Tinder pick-up lines',
+                    'On fearless street pigeons in SF',
+                    'On Pokemon Go',
+                    'On white bread',
+                    'On living',
+                    'On personal branding',
+                    'On slow learners',
+                    'On hearty multigrain bread',
+                    'On computer science',
+                    'On code that doesn\'t compile due to syntax errors',
+                    'On bad days',
+                    'On poor initial impressions',
+                    'On social awkwardness',
+                    'On Tinder guys Pt.4',
+                    'On Financial Aid',
+                    'On makeup',
+                    'On wrestling',
+                    'On roommates who touch your stuff',
+                    'On preferences',
+                    'On jeans your mother buys you',
+                    'On flirting with your trainer',
+                    'On college application essays',
+                    'On hiking',
+                    'On Tinder guys Pt.5',
+                    'On Tinder guys Pt. 6',
+                    'On human behavior',
+                    'On Tinder guys Pt.7',
+                    'On people who look older than they are',
+                    'On missing appointments',
+                    'On Justin Bieber',
+                    'On changing the US motto',
+                    'On charities for flavorless food',
+                    'On RBF',
+                    'On Donald Trump'
+
+
+    				];
+var randomIndex = Math.floor(Math.random() * quoteArray.length);
+var previousIndex = randomIndex; // We'll use that to avoid getting the same text twice in a row
+
+var usedQuoteArray = [randomIndex];
+
+textHolder.innerHTML = quoteArray[randomIndex];
+descriptHolder.innerHTML = descriptionArray[randomIndex];
+refreshBtn.onclick = updateText;
+
+//contains taken from StackOverflow
+
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function updateText(){
+    if (usedQuoteArray.length == quoteArray.length){
+        usedQuoteArray = [];
+        console.log("cleared");
+    }
+    while (randomIndex === previousIndex){
+    	randomIndex = Math.floor(Math.random() * quoteArray.length);
+    }
+    while (contains(usedQuoteArray, randomIndex)){
+    	randomIndex = Math.floor(Math.random() * quoteArray.length);
+
+    }
+    console.log(randomIndex);
+    usedQuoteArray.push(randomIndex);  
+    previousIndex = randomIndex;
+    textHolder.innerHTML = quoteArray[randomIndex];
+    descriptHolder.innerHTML = descriptionArray[randomIndex];
+}
+
+
+</script>
+
+
+</body>
+</html>
