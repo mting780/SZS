@@ -16,31 +16,31 @@
 
 <body>
 
-<!--Header-->
-<div id="header">
-	<div id="nav_bar">
-		<a href="#" class="nav_button">home</a>
-		<a href="who_are_we.html" class="nav_button" style="padding-left: 30px">who are we</a>
-		<a href="what_is_this.html" style="padding-left: 30px" class="nav_button">what is this</a>
-	</div>
-</div>
-	
-<!--Quote Box -->
-<div>
-	<div id="quote">
-		<span id="quote_description">
-		</span>
-		<div id="quote_body">
-		</div>
-	</div>
-</div>
+    <!--Header-->
+    <div id="header">
+    	<div id="nav_bar">
+    		<a href="#" class="nav_button">home</a>
+    		<a href="who_are_we.html" class="nav_button" style="padding-left: 30px">who are we</a>
+    		<a href="what_is_this.html" style="padding-left: 30px" class="nav_button">what is this</a>
+    	</div>
+    </div>
+    	
+    <!--Quote Box -->
+    <div>
+    	<div id="quote">
+    		<span id="quote_description">
+    		</span>
+    		<div id="quote_body">
+    		</div>
+    	</div>
+    </div>
 
-<!--Quote Randomizer Button -->
-<div>
-	<h4 id="next_button">
-		<p id="next">Next</p>
-	</h4>
-</div>
+    <!--Quote Randomizer Button -->
+    <div>
+    	<h4 id="next_button">
+    		<p id="next">Next</p>
+    	</h4>
+    </div>
 
 <!--footer-->
 <div id="footer">v 1.0</div>
@@ -115,7 +115,10 @@ var refreshBtn = document.getElementById('next_button'),
                     'Instead of "In God We Trust", it should be "For Shits and Giggles" ',
                     'For one dollar, you too can save a white child and buy a jar of paprika.',
                     'Usually if I don\'t feel like interacting my resting bitch face will come out. It even comes out when I do want to talk to people.',
-                    'Someone needs to address that.'
+                    'Someone needs to address that.',
+                    'I dropkicked his ass all the way back to the Scandinavian mountains.',
+                    'Is it cheating if you tattoo equations on your arm?',
+
 
     				],
 
@@ -182,52 +185,57 @@ var refreshBtn = document.getElementById('next_button'),
                     'On changing the US motto',
                     'On charities for flavorless food',
                     'On RBF',
-                    'On Donald Trump'
+                    'On Donald Trump',
+                    'On Tinder guys Pt. 8',
+                    'On test preparations'
 
 
     				];
-var randomIndex = Math.floor(Math.random() * quoteArray.length);
-var previousIndex = randomIndex; // We'll use that to avoid getting the same text twice in a row
+    var randomIndex = Math.floor(Math.random() * quoteArray.length);
+    var previousIndex = randomIndex; // We'll use that to avoid getting the same text twice in a row
 
-var usedQuoteArray = [randomIndex];
+    var usedQuoteArray = [randomIndex];
 
-textHolder.innerHTML = quoteArray[randomIndex];
-descriptHolder.innerHTML = descriptionArray[randomIndex];
-refreshBtn.onclick = updateText;
-
-//contains taken from StackOverflow
-
-function contains(a, obj) {
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] === obj) {
-            return true;
-        }
-    }
-    return false;
-}
-
-function updateText(){
-    if (usedQuoteArray.length == quoteArray.length){
-        usedQuoteArray = [];
-        console.log("cleared");
-    }
-    while (randomIndex === previousIndex){
-    	randomIndex = Math.floor(Math.random() * quoteArray.length);
-    }
-    while (contains(usedQuoteArray, randomIndex)){
-    	randomIndex = Math.floor(Math.random() * quoteArray.length);
-
-    }
-    console.log(randomIndex);
-    usedQuoteArray.push(randomIndex);  
-    previousIndex = randomIndex;
     textHolder.innerHTML = quoteArray[randomIndex];
     descriptHolder.innerHTML = descriptionArray[randomIndex];
-}
+    refreshBtn.onclick = updateText;
+    window.onkeydown = function(e) {
+        updateText;
+    }
+
+    //contains 'taken' from StackOverflow
+
+    function contains(a, obj) {
+        for (var i = 0; i < a.length; i++) {
+            if (a[i] === obj) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function updateText(){
+        if (usedQuoteArray.length == quoteArray.length){
+            usedQuoteArray = [];
+            console.log("cleared");
+        }
+        while (randomIndex === previousIndex){
+        	randomIndex = Math.floor(Math.random() * quoteArray.length);
+        }
+        while (contains(usedQuoteArray, randomIndex)){
+        	randomIndex = Math.floor(Math.random() * quoteArray.length);
+
+        }
+        console.log(randomIndex);
+        usedQuoteArray.push(randomIndex);  
+        previousIndex = randomIndex;
+        textHolder.innerHTML = quoteArray[randomIndex];
+        descriptHolder.innerHTML = descriptionArray[randomIndex];
+    }
 
 
-</script>
+    </script>
 
 
-</body>
+    </body>
 </html>
